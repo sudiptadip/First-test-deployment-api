@@ -7,6 +7,10 @@ app.use(express.json())
 
 
 app.get('/',async(req,res)=>{
+    res.send({msg: "hello"})
+})
+
+app.get('/no',async(req,res)=>{
     let data = await task.find()
     res.send(data)
 })
