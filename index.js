@@ -12,7 +12,10 @@ app.get('/',async(req,res)=>{
 
 app.get('/no',async(req,res)=>{
     let data = await task.find()
-    res.send(data)
+    if(data){
+        return res.send(data)
+    }
+    res.send("faild to load data")
 })
 
 app.post('/add',async (req,res)=>{
